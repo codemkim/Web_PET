@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+{% include 'head.html' %}
+
+<body>
+
+{% include 'header.html' %}
+
+<hr>
+
+{% block content %}
+
+{% endblock %}
+    {#    static java link#}
+<script src="{% static 'javascript/allfunc.js' %}"></script>
+<hr>
+
+</body>
+</html>
