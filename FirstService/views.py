@@ -20,11 +20,11 @@ def upload_create(request):
     except:
         pass
     form.save()
-    return redirect('FirstService:loading', kwargs={'pk':form.id})
+    return redirect('FirstService:loading', pk=form.id)
 
 
 def loading(request, **kwargs):
-    profile = Profile.objects.filter(id=kwargs['pk'])
+    profile = Profile.objects.get(id=kwargs['pk'])
     return render(request, 'loading.html', {'profile':profile})
 
 
