@@ -2,6 +2,14 @@
 
 {% block content %}
 
-        <button style="text-align: center;" class="bubbly-button">Start !</button>
+    <form action="{% url 'FirstService:upload_create' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        제목 <br>
+        <input type="text" name="title"> <br>
+        내용 <br>
+        <input type="file" name="image"><br>
+        <input type="submit" value="Submit"/>
+    </form>
+
 
 {% endblock content %}

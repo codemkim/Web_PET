@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% for file in profile %}
+        <h1>{{ file.title }}</h1>
+        <img src="{{ file.image }}">
+    {% endfor %}
 
-        <button style="text-align: center;" class="bubbly-button">loading !</button>
-    
+    <div class="progress-bar" style="margin-top:1rem;">
+        <span class="bar">
+            <span class="progress"></span>
+        </span>
+    </div>
+
 {% endblock content %}

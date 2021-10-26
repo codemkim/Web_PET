@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
+from FirstService.models import Profile
+
 
 def home(request):
 
@@ -10,9 +12,20 @@ def upload(request):
 
     return render(request, 'upload.html')
 
-def loading(request):
+def upload_create(request):
+    form=Profile()
+    form.title=request.POST['title']
+    try:
+        form.image=request.FILES['image']
+    except:
+        pass
+    form.save()
+    return redirect('FirstService:loading')
 
-    return render(request, 'loading.html')
+
+def loading(request):
+    profile = Profile.objects.all()
+    return render(request, 'loading.html', {'profile':profile})
 
 
 def result(request):

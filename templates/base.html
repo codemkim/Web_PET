@@ -5,16 +5,16 @@
 {% include 'head.html' %}
 
 <body>
-
 {% include 'header.html' %}
 
 <hr>
+<div class="inside_hr">
+    {% block content %}
 
-{% block content %}
-
-{% endblock %}
+    {% endblock %}
     {#    static java link#}
-<script src="{% static 'javascript/allfunc.js' %}"></script>
+    <script src="{% static 'javascript/allfunc.js' %}"></script>
+</div>
 <hr>
 
 </body>

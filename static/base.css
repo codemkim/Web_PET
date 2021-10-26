@@ -343,7 +343,7 @@ body {
     font-size: 1em;
     padding: 1em 2em;
     margin-top: 100px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     -webkit-appearance: none;
     appearance: none;
     background-color: #ff0081;
@@ -441,4 +441,68 @@ a:visited {
 a:hover {
     color: gray;
     text-decoration: none;
+}
+
+.inside_hr {
+    height: 350px;
+}
+
+
+ @keyframes loader {
+	 0% {
+		 width: 0;
+	}
+	 20% {
+		 width: 10%;
+	}
+	 25% {
+		 width: 24%;
+	}
+	 43% {
+		 width: 41%;
+	}
+	 56% {
+		 width: 50%;
+	}
+	 66% {
+		 width: 52%;
+	}
+	 71% {
+		 width: 60%;
+	}
+	 75% {
+		 width: 76%;
+	}
+	 94% {
+		 width: 86%;
+	}
+	 100% {
+		 width: 100%;
+	}
+}
+ .progress-bar {
+     background-color: #f6f7fa;
+	 border-radius: 60px;
+	 overflow: hidden;
+	 width: 100%;
+}
+ .progress-bar span {
+	 display: block;
+}
+ .bar {
+	 background: rgba(0, 0, 0, 0.075);
+}
+ .progress {
+	 animation: loader 5s ease infinite;
+	 background: #75b800;
+	 color: #fff;
+	 padding: 5px;
+	 width: 0;
+}
+ .progress-bar {
+	 left: 50%;
+	 max-width: 50%;
+	 position: absolute;
+	 top: 50%;
+	 transform: translate3d(-50%, -50%, 0);
 }
