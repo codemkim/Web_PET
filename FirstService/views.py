@@ -24,7 +24,7 @@ def upload_create(request):
 
 
 def loading(request):
-    profile = Profile.objects.all()
+    profile = Profile.objects.order_by('title', 'image')
     return render(request, 'loading.html', {'profile':profile})
 
 

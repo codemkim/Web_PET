@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
-
 
 body {
     font-family: 'Jua', sans-serif;
@@ -9,317 +7,6 @@ body {
     color: #35465d;
     text-align: center;
 }
-
-
-.portfolio_area {
-}
-
-.portfolio {
-    margin-top: 10%;
-}
-
-.portfoloi_top {
-}
-
-.portfoloi_content_area {
-}
-
-.portfolio_menu {
-    text-align: center;
-    overflow: hidden;
-    margin-top: 50px;
-    margin-bottom: 48px;
-}
-
-.portfolio_menu ul {
-    list-style: none outside none;
-    text-align: center;
-}
-
-.portfolio_menu ul li {
-    display: inline-block;
-}
-
-.portfolio_menu ul li a {
-    color: #363940;
-    background: transparent;
-    display: inline-block;
-    margin: 4px;
-    padding: 8px 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.portfolio_content {
-}
-
-.portfolio_single_content {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5;
-    margin-bottom: 30px;
-    overflow: hidden;
-
-}
-
-.portfolio_single_content:hover img {
-    -o-transform: scale(2);
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
-}
-
-.portfolio_single_content img {
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    z-index: 6;
-    cursor: pointer;
-    -moz-transition: all 1s;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    -ms-transition: all 1s;
-    transition: all 1s;
-}
-
-.portfolio_single_content .canv {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.portfolio_single_content div + div {
-    background: none repeat scroll 0 0 rgba(255, 255, 255, .9);
-    bottom: -100%;
-    color: #FFC000;
-    font-weight: bold;
-    left: 0;
-    margin: 0;
-    min-height: 90px;
-    padding: 31px 5px 0 10px;
-    position: absolute;
-    width: 100%;
-    z-index: 12;
-    border-top: 0;
-}
-
-/*.portfolio_single_content:hover div+div{bottom: 0;}*/
-.portfolio_single_content div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transform: scale(0);
-    transition: all .6s;
-    opacity: 0;
-}
-
-.portfolio_single_content:hover div {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.portfolio_single_content div a {
-    color: #FFFFFF;
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 40%;
-    padding-bottom: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.portfolio_single_content div span {
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-}
-
-.portfolio_content {
-}
-
-.portfolio_content {
-    margin-top: 36px;
-    overflow: hidden;
-}
-
-.file-upload {
-    z-index: 10;
-    padding: 13% 7%;
-    margin: 0 auto;
-    border-radius: 10px;
-    border: solid 1.5px #f6f7fa;
-    background-color: #f6f7fa;
-}
-
-/* .selected{
-    text-decoration:line-through;
-    font-weight:700;
-    color:red;
-    text-align:justify;
-} */
-
-
-.p-3 {
-    margin-left: 30px;
-}
-
-.navbar-nav {
-    position: fixed;
-}
-
-.navbar-nav > .nav-item {
-    margin-top: 5px;
-    font-size: 1.3vw;
-    margin-right: 10px;
-
-}
-
-.second-page {
-
-    width: 100%;
-
-}
-
-.file-upload-btn {
-    width: 100%;
-    margin: 0;
-    color: #fff;
-    background: #1FB264;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #15824B;
-    transition: all .2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.file-upload-btn:hover {
-    background: #1AA059;
-    color: #ffffff;
-    transition: all .2s ease;
-    cursor: pointer;
-}
-
-.file-upload-btn:active {
-    border: 0;
-    transition: all .2s ease;
-}
-
-.file-upload-content {
-    display: none;
-    text-align: center;
-}
-
-#loading {
-    display: none;
-}
-
-.file-upload-input {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.gallery-wrap {
-    margin-top: 10%;
-}
-
-.image-upload-wrap {
-    width: 60%;
-    margin: 0 auto;
-    position: relative;
-    object-fit: contain;
-    border-radius: 10px;
-    border: dashed 1.5px #35465d;
-    background-color: #ffffff;
-}
-
-.image-dropping,
-.image-upload-wrap:hover {
-    background-color: #35465d82;
-    border: 1.5px dashed #ffffff;
-}
-
-.image-title-wrap {
-    padding: 0 15px 15px 15px;
-    color: #222;
-}
-
-.drag-text {
-    text-align: center;
-}
-
-.drag-text h3 {
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.file-upload-image {
-    max-height: 40%;
-    max-width: 40%;
-    margin: auto;
-    padding: 8px;
-}
-
-.try-again-btn {
-    border-radius: 40px;
-    border: solid 1.5px #35465d;
-    background-color: #35465d;
-}
-
-.try-again-text {
-    display: block;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffffff;
-    padding: 4px 15px;
-}
-
-.remove-image:hover {
-    background: #c13b2a;
-    color: #ffffff;
-    transition: all .2s ease;
-    cursor: pointer;
-}
-
-.remove-image:active {
-    border: 0;
-    transition: all .2s ease;
-
-}
-
-.navbar-light .navbar-brand {
-
-    font-size: 2vw;
-    line-height: 1.68;
-    text-align: left;
-    color: #35465d;
-
-}
-
-.navbar-light .navbar-toggler {
-    border-color: #ffffff;
-
-}
-
 
 .title {
     margin-top: 3.75%;
@@ -334,6 +21,11 @@ body {
     line-height: 1.4;
     text-align: center;
     color: #35465d;
+}
+
+/*body 높이 설정*/
+.inside_hr {
+    height: 350px;
 }
 
 /*시작 버튼*/
@@ -428,6 +120,9 @@ body {
     }
 }
 
+/*시작 버튼 끝*/
+
+/*a 링크 기본 설정 ( 파란색 제거)*/
 a:link {
     color: red;
     text-decoration: none;
@@ -443,11 +138,9 @@ a:hover {
     text-decoration: none;
 }
 
-.inside_hr {
-    height: 350px;
-}
+/*a 링크 기본 설정 ( 파란색 제거) 끝*/
 
-
+/*로딩 바 구현*/
  @keyframes loader {
 	 0% {
 		 width: 0;
@@ -506,3 +199,4 @@ a:hover {
 	 top: 50%;
 	 transform: translate3d(-50%, -50%, 0);
 }
+/*로딩 바 구현 끝 */
