@@ -1,15 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for file in profile %}
-        <h1>{{ file.title }}</h1>
-        <img src="{{ file.image }}">
-    {% endfor %}
 
-    <div class="progress-bar" style="margin-top:1rem;">
-        <span class="bar">
-            <span class="progress"></span>
-        </span>
+    <h1>{{ profile.title }}</h1>
+    <img src="{{ profile.image.url }}">
+
+    <div class="probody">
+        <div id="wrapper">
+            <div id="mouse"></div>
+            <div class="loader">
+            </div>
+            <div class="loading-bar">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="status">
+                <div class="state"></div>
+                <div class="percentage"></div>
+            </div>
+        </div>
     </div>
 
 {% endblock content %}
