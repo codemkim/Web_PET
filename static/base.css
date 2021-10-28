@@ -23,10 +23,17 @@ body {
     color: #35465d;
 }
 .input_img {
-	width: 250px;
+	width:45%;
+	max-width: 250px;
 	height: 250px;
 	border: 5px solid gray;
 	border-radius: 70%;
+}
+
+@media screen and (max-width: 500px) {
+	html{
+		font-size:13px;
+	}
 }
 
 /*시작 버튼*/
