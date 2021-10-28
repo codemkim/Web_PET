@@ -14,7 +14,6 @@ def upload(request):
 
 def upload_create(request):
     form=Profile()
-    form.title=request.POST['title']
     try:
         form.image=request.FILES['image']
     except:
