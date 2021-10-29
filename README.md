@@ -14,3 +14,6 @@
 
 - Templates : 뼈대(base) html 모음 
 
+- requirements.txt : 사용된 모듈 모음
+
+
