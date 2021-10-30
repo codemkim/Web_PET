@@ -4,7 +4,7 @@
 
 
 
-# Description
+# Description(설명)
 
 - FirstService : home, upload, loading, result 화면 연동 및 구현 ( 첫번째 서비스 App )
 
@@ -17,3 +17,8 @@
 - requirements.txt : 사용된 모듈 모음
 
 
+# Web Deploy(배포)
+
+- 현재 배포 사이트 주소 : http://18.218.207.239/
+
+- AWS을 통한 웹 배포 및 mariaDB 연동 완료 
