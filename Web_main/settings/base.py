@@ -16,6 +16,7 @@ from pathlib import Path
 # Set the project base directory
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
+SITE_ID=1
 
 # Application definition
 
