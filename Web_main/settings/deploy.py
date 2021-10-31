@@ -1,5 +1,13 @@
 from .base import *
 
+def read_secreat(secreat_name):
+    file= open('/run/secreat/'+secreat_name )
+    secreat=file.read()
+    secreat=secreat.rstrip().lstrip()
+    file.close()
+
+    return secreat
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -13,7 +21,7 @@ DEBUG = False
 
 # Raises Django's ImproperlyConfigured
 # exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = read_secreat('DJANGO_SECREAT_KEY')
 
 ALLOWED_HOSTS = ['*']
 
@@ -25,7 +33,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'django',
-        'PASSWORD': 'password1234',
+        'PASSWORD': read_secreat('MYSQL_PASSWORD'),
         'HOST': 'mariadb',
         'PORT': '3306',
     }
