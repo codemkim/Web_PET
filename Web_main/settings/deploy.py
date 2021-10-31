@@ -1,7 +1,7 @@
 from .base import *
 
 def read_secreat(secreat_name):
-    file= open('/run/secreat/'+secreat_name )
+    file= open('/run/secreats/'+secreat_name )
     secreat=file.read()
     secreat=secreat.rstrip().lstrip()
     file.close()
