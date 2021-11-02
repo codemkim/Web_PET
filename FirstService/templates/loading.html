@@ -1,27 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="probody">
-        <div id="wrapper">
-            <div id="mouse"></div>
-            <div class="loader">
-            </div>
-            <div class="loading-bar">
-                <div class="progress-bar"></div>
-            </div>
-            <div class="status">
-                <div class="state"></div>
-                <div class="percentage"></div>
-            </div>
-        </div>
-    </div>
-    <script>
-        window.location.href = '{% url 'FirstService:learning' pk=profile.id %}'
 
-      {#  setTimeout(function() {#}
-      {#  location.href = '{% url 'FirstService:learning' pk=profile.id %}'#}
-      {#, 500)#}
-    </script>
+<div class="box">
+    <div class="cat" >
+        <div class="cat__body"></div>
+        <div class="cat__body"></div>
+        <div class="cat__tail"></div>
+        <div class="cat__head"></div>
+    </div>
+</div>
+{#    <script>#}
+{#        window.location.href = '{% url 'FirstService:learning' pk=profile.id %}'#}
+{#    </script>#}
 
 
 {% endblock content %}
