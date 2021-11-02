@@ -5,7 +5,14 @@ from django.db import models
 
 class Profile(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='')
+    image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title
+
+class Result(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='imagesResult/')
 
     def __str__(self):
         return self.title

@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 
-
-
 {% block content %}
-
-    <img class="input_img" src="{{ profile.image.url }}">
-
-
     <div class="probody">
         <div id="wrapper">
             <div id="mouse"></div>
@@ -21,11 +15,13 @@
             </div>
         </div>
     </div>
-    <h1>dd</h1>
     <script>
-        setTimeout(function() {
-        location.href = '{% url 'FirstService:result' %}'
-      }, 5200)
+        window.location.href = '{% url 'FirstService:learning' pk=profile.id %}'
+
+      {#  setTimeout(function() {#}
+      {#  location.href = '{% url 'FirstService:learning' pk=profile.id %}'#}
+      {#, 500)#}
     </script>
+
 
 {% endblock content %}
