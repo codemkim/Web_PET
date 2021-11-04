@@ -13,6 +13,7 @@ class Profile(models.Model):
 
     def save(self, *args, **kwargs):
         self.convert_image()
+        self.image = None
         super(Profile, self).save(*args, **kwargs)
 
     def convert_image(self, *args, **kwargs):
@@ -23,15 +24,6 @@ class Profile(models.Model):
                                                     content_type='image/jpeg',
                                                     size=sys.getsizeof(image_converted),
                                                     charset=None)
-
-class Result(models.Model):
-    title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='imagesResult/')
-
-    def __str__(self):
-        return self.title
-
-
 
 def convert_test(img):
     img = Image.open(img)
@@ -44,3 +36,12 @@ def image_to_bytes(img):
     img.save(output, format='JPEG', quality=95)
     output.seek(0)
     return output
+
+
+class Result(models.Model):
+    title = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='imagesResult/')
+
+    def __str__(self):
+        return self.title
+

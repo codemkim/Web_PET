@@ -23,6 +23,7 @@ def upload_create(request):
 
     form.save()
     profile = Profile.objects.get(id=form.id)
+
     return render(request, 'loading.html', {'profile':profile})
 
 def learning(request, **kwargs):
@@ -37,12 +38,11 @@ def learning(request, **kwargs):
     temp_image = temp_image.convert('L')
 
     temp_image.save(output, format='JPEG')
-
     result_img.image = InMemoryUploadedFile(output,
                                             "ImageField",
-                                            profile.image.name,
+                                            profile.image_converted.name,
                                             'image/jpeg',
-                                            sys.getsizeof(output),
+                                            None,
                                             None)
     result_img.save()
 
