@@ -5,7 +5,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 # Create your views here.
 from FirstService.models import Profile, Result
 from PIL import Image
-from django.core.files.base import ContentFile
+
 
 
 def home(request):
@@ -18,10 +18,8 @@ def upload(request):
 
 def upload_create(request):
 
-    temp =request.FILES['image']
-    resize_image = ContentFile(temp.read())
     form = Profile()
-    form.image.save(str(form.id) +'.jpg', resize_image)
+    form.image= request.FILES['image']
 
     form.save()
     profile = Profile.objects.get(id=form.id)
@@ -35,7 +33,7 @@ def learning(request, **kwargs):
 
     output = BytesIO()
 
-    temp_image = Image.open(profile.image)
+    temp_image = Image.open(profile.image_converted)
     temp_image = temp_image.convert('L')
 
     temp_image.save(output, format='JPEG')

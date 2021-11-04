@@ -10,9 +10,12 @@
         <div class="cat__head"></div>
     </div>
 </div>
-{#    <script>#}
-{#        window.location.href = '{% url 'FirstService:learning' pk=profile.id %}'#}
-{#    </script>#}
+    <script>
+        setTimeout(function (){
+            window.location.href = '{% url 'FirstService:learning' pk=profile.id %}'
+        },5000)
+
+    </script>
 
 
 {% endblock content %}
