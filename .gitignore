@@ -85,7 +85,7 @@ Deploy/Dockerfile
 
 Deploy/docker-compose.yml
 
-Deploy/aws_webpet_key.pem
+aws_webpet_key.pem
 
 Deploy/nginx.conf
 
