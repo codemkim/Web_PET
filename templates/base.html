@@ -8,15 +8,13 @@
 
 {% include 'header.html' %}
 
-<hr>
     <div class="inside_hr">
         {% block content %}
 
         {% endblock %}
         {#    static java link#}
-        <script src="{% static 'javascript/allfunc.js' %}"></script>
+        <script type="text/javascript" src="{% static 'javascript/allfunc.js' %}"></script>
     </div>
-<hr>
 
 </body>
 </html>

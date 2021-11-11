@@ -9,7 +9,8 @@ body {
 }
 
 .title {
-    margin-top: 3.75%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     font-size: 5vw;
     line-height: 1.3;
     text-align: center;
@@ -18,6 +19,7 @@ body {
 
 .subtitle {
     padding-top: -15px;
+    margin-bottom: 1%;
     line-height: 1.4;
     text-align: center;
     color: #35465d;
