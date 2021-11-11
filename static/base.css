@@ -272,6 +272,26 @@ a:hover {
 	 color: inherit;
 }
 
+ .pekecontainer .peke_bg {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: #dfdeed;
+  /*background-image: url(pekeboy_bg.png);*/
+  background-size: contain;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.pekecontainer .peke_bg img {
+  display: flex;
+  align-content: center;
+  /* filter: drop-shadow(20px 20px 1px #002fa5); */
+  width: 50%;
+  height: auto;
+  margin: 5% auto 1% auto;
+}
 
 /*로딩 바 구현 끝 */
 
@@ -292,15 +312,15 @@ a:hover {
   height: 100vh;
 }
 .upload_container .upload_frame {
-  position: relative;
+ position: relative;
   /* width 수정하여 이미지 크기 변경 */
   /* width: 28%; */
-  max-width: 400px;
-  min-width: 400px;
-  width: 100%;
-  min-height: 680px;
-  max-height: 700px;
-  height: 100%;
+  max-width: 370px;
+  min-width: 330px;
+  width: 90%;
+  min-height: 590px;
+  max-height: 630px;
+  height: 90%;
   border: solid 12px #ffe30b;
   border-radius: 2%;
   background-color: #7183ff;
@@ -342,9 +362,9 @@ a:hover {
   align-items: center;
 }
 .upload_container .upload_frame .line_dot img {
-  max-width: 100%;
+  max-width: 70%;
   width: fit-content;
-  max-height: 100%;
+  max-height: 70%;
 }
 
 /* .upload_container .upload_frame .img_box {
@@ -473,4 +493,244 @@ a:hover {
             padding in the values you specify for an element's
             width and height. */
   box-sizing: border-box;
+}
+
+/*결과창*/
+.result_container {
+  display: flex;
+  /* position: relative; */
+  flex-direction: column;
+  /* 배경은 body에 넣는게 가장 좋습니다. */
+  /* background-color: #dfdeed; */
+  /* background-image: url(pekeboy_bg.png);
+    background-size: contain; */
+  align-items: center;
+  /* width: 100%;
+      height: 100vh; */
+  width: 100%;
+  height: 100vh;
+}
+.result_container .result_frame {
+  position: relative;
+  /* width 수정하여 이미지 크기 변경 */
+  /* width: 28%; */
+  max-width: 370px;
+  min-width: 330px;
+  width: 100%;
+  min-height: 590px;
+  max-height: 630px;
+  height: 100%;
+  border: solid 12px #ffe30b;
+  border-radius: 2%;
+  background-color: #7183ff;
+  margin: 3% auto;
+}
+
+.result_container .result_frame .text_box {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 5%;
+  width: 100%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+}
+
+.result_container .result_frame .text_box .step_2 {
+  color: #ffe30b;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.result_container .result_frame .text_box .text {
+  color: #ffe30b;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.result_container .result_frame .line_dot {
+  /* position: relative; */
+  width: 70%;
+  height: 47%;
+  border: solid 6px #ffe30b;
+  border-style: dashed;
+  margin: 34% auto;
+}
+
+/* 겹쳐지는 요소(자식요소)는 absolute를 지정하여 top left만으로 위치를 지정해줍니다. */
+.result_container .result_frame .icon_box_1 {
+  position: absolute;
+  list-style: none;
+  width: 60px;
+  height: 50px;
+  top: 69%;
+  left: 20%;
+  background-color: #002fa5;
+  border-radius: 10px;
+}
+
+.result_container .result_frame .icon_box_1 li {
+  padding: 8px 15px;
+  font-size: 30px;
+  color: #ffe30b;
+}
+
+.result_container .result_frame .icon_box_2 {
+  position: absolute;
+  list-style: none;
+  width: 60px;
+  height: 50px;
+  top: 69%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #002fa5;
+  border-radius: 10px;
+}
+
+.result_container .result_frame .icon_box_2 li {
+  padding: 8px 20px;
+  font-size: 30px;
+  color: #ffe30b;
+}
+
+.result_container .result_frame .icon_box_3 {
+  position: absolute;
+  list-style: none;
+  width: 60px;
+  height: 50px;
+  top: 69%;
+  left: 64%;
+  background-color: #002fa5;
+  border-radius: 10px;
+}
+
+.result_container .result_frame .icon_box_3 li {
+  padding: 4px 14px;
+  font-size: 35px;
+  color: #ffe30b;
+}
+
+.result_container .result_frame .save_btn {
+  position: absolute;
+  list-style: none;
+  width: 130px;
+  height: 45px;
+  top: 82%;
+  left: 10%;
+  background-color: #ffe30b;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 1px #c7b100);
+}
+
+.result_container .result_frame .save_btn li {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.result_container .result_frame .save_btn li a {
+  color: #3057d8;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 25px;
+  /* padding-top: 50px; */
+  line-height: 220%;
+}
+
+.result_container .result_frame .re_btn {
+  position: absolute;
+  list-style: none;
+  width: 130px;
+  height: 45px;
+  top: 82%;
+  left: 53%;
+  background-color: #ffe30b;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 1px #c7b100);
+}
+
+.result_container .result_frame .re_btn li {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.result_container .result_frame .re_btn li a {
+  color: #3057d8;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 25px;
+  /* padding-top: 50px; */
+  line-height: 220%;
+}
+
+.result_container .result_frame .re_btn li:hover {
+  background-color: #6ed36e;
+}
+
+.result_container .result_frame .save_btn li:hover {
+  background-color: #6ed36e;
+}
+
+p {
+  padding-top: 0%;
+  background-color: #3057d8;
+  text-align: center;
+  width: 100%;
+  bottom: 7vh;
+  /* padding-bottom: 3%; */
+  margin: 0 auto;
+  font-weight: bold;
+  color: var(--background-color);
+}
+
+@media screen and (max-width: 768px) {
+  /* Nav container */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  /* Menu */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .navbar__menu a {
+    /* Fill in an entire line so that user can click on any space */
+    display: block;
+  }
+
+  /* Icons */
+  .navbar__icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Toggle button */
+  .navbar__toggleBtn {
+    display: block;
+  }
+
+  /* When toggle button is clicked - active state */
+  .navbar__menu.active,
+  .navbar__icons.active {
+    display: flex;
+  }
 }

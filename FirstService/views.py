@@ -3,7 +3,7 @@ from io import BytesIO
 import sys
 from django.core.files.uploadedfile import InMemoryUploadedFile
 # Create your views here.
-from FirstService.models import Profile, Result
+from FirstService.models import Profile,Result
 from PIL import Image
 
 

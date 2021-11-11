@@ -8,7 +8,7 @@ from PIL import Image
 
 class Profile(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', null=True)
     image_converted =models.ImageField(upload_to='images/', null=True)
 
     def save(self, *args, **kwargs):
@@ -40,7 +40,7 @@ def image_to_bytes(img):
 
 class Result(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='imagesResult/')
+    image = models.ImageField(upload_to='imagesResult/', null=True)
 
     def __str__(self):
         return self.title

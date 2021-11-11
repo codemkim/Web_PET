@@ -2,6 +2,33 @@
 
 {% block content %}
 
-        <img class="input_img" src="{{ result.image.url }}">
+           <section class="result_container">
+        <div class="result_frame">
+            <div class="text_box">
+                <div class="step_2"># STEP 2</div>
+                <div class="text">RESULT PEKEMON</div>
+            </div>
+            <div class="line_dot">
+                <img style="margin-top: 2rem;" width="200" height="200" border="1" src="{{ result.image.url }}">
+            </div>
+            <div class="icon_box_1">
+                <li><a href="#"><i class="fab fa-brands fa-twitter"></i></a></li>
+            </div>
+            <div class="icon_box_2">
+                <li><a href="#"><i class="fab fa-brands fa-facebook-f"></i></a></li>
+            </div>
+            <div class="icon_box_3">
+                <li><a href="#"><i class="fab fa-brands fa-line"></i></a></li>
+            </div>
+
+            <div class="save_btn">
+                <li><a href="{{ result.image.url }}" download="#">저장하기</a></li>
+            </div>
+            <div class="re_btn">
+                <li><a href="{% url 'FirstService:upload' %}">다시하기</a></li>
+            </div>
+
+        </div>
+    </section>
     
 {% endblock content %}
