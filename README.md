@@ -27,4 +27,4 @@
 
 - 도메인 적용 완료 : www.pekemon.shop
 
-- 뭐할까이제
+- 웹 https 프로토콜 적용
