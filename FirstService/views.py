@@ -46,7 +46,7 @@ def learning(request, **kwargs):
 
     temp = profile.image_converted.name
 
-    resp = requests.post("http://localhost:5000/predict",
+    resp = requests.post("http://3.16.37.62:5000/predict",
                          files={"file": open('media/'+temp, 'rb')})
     save_path = "media/temp/result"+str(profile.id)+".jpg"
     photo = open(save_path, 'wb')
