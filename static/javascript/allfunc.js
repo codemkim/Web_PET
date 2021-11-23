@@ -1,23 +1,13 @@
 // 시작 버튼
-var animateButton = function (e) {
 
-    e.preventDefault;
-    //reset animation
-    e.target.classList.remove('animate');
+const toggleBtn = document.querySelector('.navbar__toggleBtn');
+const menu = document.querySelector('.navbar__menu');
+const icons = document.querySelector('.navbar__icons');
 
-    e.target.classList.add('animate');
-    setTimeout(function () {
-        e.target.classList.remove('animate');
-    }, 700);
-};
-
-var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-for (var i = 0; i < bubblyButtons.length; i++) {
-    bubblyButtons[i].addEventListener('click', animateButton, false);
-}
-
-
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  icons.classList.toggle('active');
+});
 
 // 업로드
 var sel_file;

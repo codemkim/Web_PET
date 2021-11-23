@@ -1,154 +1,183 @@
+:root {
+  --text-color: #ffe30b;
+  --background-color: #002fa5;
+  --accent-color: #ffe30b;
+}
+* {
+  /* Tells the browser to account for any border and
+          padding in the values you specify for an element's
+          width and height. */
+  box-sizing: border-box;
+}
 
 body {
-    font-family: 'Jua', sans-serif;
 
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    color: #35465d;
-    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: url('image/pekeboy_bg.png');
+      background-size: contain;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+/* Nav container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 25px;
+  background-color: var(--background-color);
 }
 
-.title {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    font-size: 5vw;
-    line-height: 1.3;
-    text-align: center;
-    color: #35465d;
+/* Logo with text */
+.navbar__logo {
+  font-weight: bold;
+  font-size: 40px;
+  color: var(--text-color);
+  letter-spacing: 1.5px;
 }
 
-.subtitle {
-    padding-top: -15px;
-    margin-bottom: 1%;
-    line-height: 1.4;
-    text-align: center;
-    color: #35465d;
-}
-.input_img {
-	width:45%;
-	max-width: 250px;
-	height: 250px;
-	border: 5px solid gray;
-	border-radius: 70%;
+.navbar__logo i {
+  color: var(--accent-color);
 }
 
-@media screen and (max-width: 500px) {
-	html{
-		font-size:13px;
-	}
+/* Menu */
+.navbar__menu {
+  display: flex;
+  padding-left: 60%;
+  list-style: none;
 }
 
-/*시작 버튼*/
-.bubbly-button {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    display: inline-block;
-    font-size: 1em;
-    padding: 1em 2em;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #ff0081;
-    color: #fff;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+.navbar__menu li {
+  padding: 8px 12px;
+  font-size: 20px;
 }
 
-.bubbly-button:focus {
-    outline: 0;
+.navbar__menu li:hover {
+  background-color: #7183ff;
+
+  border-radius: 4px;
+}
+.navbar__icons {
+  list-style: none;
+  color: var(--text-color);
+  display: flex;
+  padding-left: 0;
 }
 
-.bubbly-button:before, .bubbly-button:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 140%;
-    height: 100%;
-    left: -20%;
-    z-index: -1000;
-    transition: all ease-in-out 0.5s;
-    background-repeat: no-repeat;
+/* Icons */
+.navbar__icons li {
+  padding: 8px 12px;
 }
 
-.bubbly-button:before {
-    display: none;
-    top: -75%;
-    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
-    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+/* Toggle button */
+.navbar__toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--accent-color);
 }
 
-.bubbly-button:after {
-    display: none;
-    bottom: -75%;
-    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+.pekecontainer .peke_frame {
+  position: relative;
+  max-width: 700px;
+  min-width: 450px;
+  width: 100%;
+  min-height: 420px;
+  max-height: 600px;
+  height: 100%;
+  border: solid 12px #ffe30b;
+  border-radius: 2%;
+  background-color: #7183ff;
+  margin: 3% auto;
 }
 
-.bubbly-button:active {
-    transform: scale(0.9);
-    background-color: #e60074;
-    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+.pekecontainer .peke_frame .stat_img img {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  top: 10%;
+  left: 5.3%;
+  width: 40%;
+  height: auto;
 }
 
-.bubbly-button.animate:before {
-    display: block;
-    animation: topBubbles ease-in-out 0.75s forwards;
+.pekecontainer .peke_frame .banner_img {
+  position: absolute;
+  display: flex;
+  align-content: center;
+  width: 50%;
+  height: auto;
 }
 
-.bubbly-button.animate:after {
-    display: block;
-    animation: bottomBubbles ease-in-out 0.75s forwards;
+.pekecontainer .peke_frame .banner_img img {
+  width: 280px;
+  height: auto;
+  margin-left: 100%;
+  margin-top: 5%;
+  height: 100%;
 }
 
-@keyframes topBubbles {
-    0% {
-        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
-    }
-    50% {
-        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
-    }
-    100% {
-        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
+.pekecontainer .peke_frame .text_container {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes bottomBubbles {
-    0% {
-        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
-    }
-    50% {
-        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
-    }
-    100% {
-        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
-        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-    }
+.pekecontainer .peke_frame .text_container .text_box1 {
+  position: absolute;
+  width: 600px;
+  height: 150px;
+  top: 60%;
+  background-color: var(--background-color);
+  left: 5.5%;
 }
 
-/*시작 버튼 끝*/
-
-/*a 링크 기본 설정 ( 파란색 제거)*/
-a:link {
-    color: red;
-    text-decoration: none;
+.pekecontainer .peke_frame .text_container .text_box1 .text_p {
+  list-style: none;
+  color: var(--text-color);
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 4%;
+  font-size: 24px;
+  line-height: 90%;
+  font-weight: bold;
 }
 
-a:visited {
-    color: black;
-    text-decoration: none;
+.pekecontainer .peke_frame .text_container .text_box2 {
+  position: absolute;
+  width: 220px;
+  height: 120px;
+  top: 63.5%;
+  left: 55%;
+  background-color: #3057d8;
+  border: solid 5px var(--accent-color);
+  border-style: dashed;
 }
 
-a:hover {
-    color: gray;
-    text-decoration: none;
+.pekecontainer .peke_frame .text_container .text_box2 .go {
+  color: #ccd2fc;
+  font-size: 23px;
+  margin-left: 15%;
+  margin-top: 8%;
+  width: 40%;
+  font-weight: bold;
+  transition: all 0.2s;
 }
 
-/*a 링크 기본 설정 ( 파란색 제거) 끝*/
+.pekecontainer .peke_frame .text_container .text_box2 .go:hover {
+  background-color: rgba(132, 149, 248, 0.788);
+  border-radius: 5%;
+}
+
+.pekecontainer .peke_frame .text_container .text_box2 .yes {
+  color: #ccd2fc;
+  font-size: 23px;
+  margin-left: 15%;
+  margin-top: 6%;
+  width: 40%;
+}
 
 /*로딩 바 구현*/
 .cat {
@@ -224,6 +253,7 @@ a:hover {
 	}
 }
  .box {
+     margin: 7rem auto;
 	 display: flex;
 	 flex: 1;
 	 flex-direction: column;
@@ -237,13 +267,7 @@ a:hover {
 	 padding: 0;
 	 box-sizing: border-box;
 }
- body {
-	 display: flex;
-	 flex-direction: column;
-	 min-height: 100%;
-	 margin: 0;
-	 line-height: 1.4;
-}
+
  .intro {
 	 width: 90%;
 	 max-width: 36rem;
@@ -279,7 +303,7 @@ a:hover {
   position: relative;
   flex-direction: column;
   background-color: #dfdeed;
-  /*background-image: url(pekeboy_bg.png);*/
+  background-image: url('/static/image/pekeboy_bg.png');
   background-size: contain;
   align-items: center;
   width: 100%;
@@ -449,73 +473,17 @@ a:hover {
   border: 0;
 }
 
-/* 겹쳐지는 요소(자식요소)는 absolute를 지정하여 top left만으로 위치를 지정해줍니다. */
-
-@media screen and (max-width: 768px) {
-  /* Nav container */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 24px;
-  }
-
-  /* Menu */
-  .navbar__menu {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-  .navbar__menu a {
-    /* Fill in an entire line so that user can click on any space */
-    display: block;
-  }
-
-  /* Icons */
-  .navbar__icons {
-    display: none;
-    justify-content: center;
-    width: 100%;
-  }
-
-  /* Toggle button */
-  .navbar__toggleBtn {
-    display: block;
-  }
-
-  /* When toggle button is clicked - active state */
-  .navbar__menu.active,
-  .navbar__icons.active {
-    display: flex;
-  }
-}
-* {
-  /* Tells the browser to account for any border and
-            padding in the values you specify for an element's
-            width and height. */
-  box-sizing: border-box;
-}
-
 /*결과창*/
+
 .result_container {
   display: flex;
-  /* position: relative; */
   flex-direction: column;
-  /* 배경은 body에 넣는게 가장 좋습니다. */
-  /* background-color: #dfdeed; */
-  /* background-image: url(pekeboy_bg.png);
-    background-size: contain; */
   align-items: center;
-  /* width: 100%;
-      height: 100vh; */
   width: 100%;
   height: 100vh;
 }
 .result_container .result_frame {
   position: relative;
-  /* width 수정하여 이미지 크기 변경 */
-  /* width: 28%; */
   max-width: 370px;
   min-width: 330px;
   width: 100%;
@@ -685,7 +653,243 @@ a:hover {
   background-color: #6ed36e;
 }
 
-p {
+/* 화풍 선택 */
+.option_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.option_container .option_frame {
+  position: relative;
+
+  max-width: 600px;
+  min-width: 600px;
+  width: 100%;
+  min-height: 590px;
+  max-height: 630px;
+  height: 100%;
+  border: solid 12px #ffe30b;
+  border-radius: 2%;
+  background-color: #7183ff;
+  margin: 3% auto;
+}
+
+.option_container .option_frame .text_box {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 5%;
+  width: 100%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+}
+
+.option_container .option_frame .text_box .step_2 {
+  color: #ffe30b;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.option_container .option_frame .text_box .warning_box {
+  color: #ffe30b;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  padding-top: 69%;
+}
+
+.option_container .option_frame .text_box .text {
+  color: #ffe30b;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.option_container .option_frame .line_dot {
+  /* position: relative; */
+  width: 70%;
+  height: 60%;
+  border: solid 6px #ffe30b;
+  border-style: dashed;
+  margin: 20% auto;
+}
+
+/* 겹쳐지는 요소(자식요소)는 absolute를 지정하여 top left만으로 위치를 지정해줍니다. */
+.option_container .option_frame .icon_box_1 {
+  position: absolute;
+  list-style: none;
+  width: 120px;
+  height: 120px;
+  top: 25%;
+  left: 23%;
+  background-color: #002fa5;
+  border-radius: 60px;
+}
+
+.option_container .option_frame .icon_box_1 li img {
+  margin-left: 15px;
+  padding: 12px 16px;
+  width: 80px;
+  filter: drop-shadow(5px 1px 0px #7183ff);
+  transition: all 0.2s ease-in-out;
+}
+
+.option_container .option_frame .icon_box_1 li img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(-4px 0px 0px yellow);
+}
+
+.option_container .option_frame .icon_box_2 {
+  position: absolute;
+  list-style: none;
+  width: 120px;
+  height: 120px;
+  top: 25%;
+  left: 66%;
+  transform: translateX(-50%);
+  background-color: #002fa5;
+  border-radius: 60px;
+}
+
+.option_container .option_frame .icon_box_2 li img {
+  padding: 10px 20px;
+  margin-left: 19px;
+  width: 80px;
+  filter: drop-shadow(5px 1px 0px #7183ff);
+  transition: all 0.2s ease-in-out;
+}
+
+.option_container .option_frame .icon_box_2 li img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(-4px 0px 0px yellow);
+}
+
+.option_container .option_frame .icon_box_3 {
+  position: absolute;
+  list-style: none;
+  width: 120px;
+  height: 120px;
+  top: 54%;
+  left: 66%;
+  transform: translateX(-50%);
+  background-color: #002fa5;
+  border-radius: 60px;
+}
+
+.option_container .option_frame .icon_box_3 li img {
+  padding: 24px 14px;
+  margin-left: 13px;
+  width: 85px;
+  filter: drop-shadow(5px 1px 0px #7183ff);
+  transition: all 0.2s ease-in-out;
+}
+
+.option_container .option_frame .icon_box_3 li img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(-4px 0px 0px yellow);
+}
+
+.option_container .option_frame .icon_box_4 {
+  position: absolute;
+  list-style: none;
+  width: 120px;
+  height: 120px;
+  top: 54%;
+  left: 33%;
+  transform: translateX(-50%);
+  background-color: #002fa5;
+  border-radius: 60px;
+}
+
+.option_container .option_frame .icon_box_4 li img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(-4px 0px 0px yellow);
+}
+
+.option_container .option_frame .icon_box_4 li img {
+  padding: 15px 14px;
+  margin-left: 18px;
+  width: 85px;
+  filter: drop-shadow(5px 1px 0px #7183ff);
+  transition: all 0.2s ease-in-out;
+}
+
+.option_container .option_frame .save_btn {
+  position: absolute;
+  list-style: none;
+  width: 130px;
+  height: 45px;
+  top: 82%;
+  left: 10%;
+  background-color: #ffe30b;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 1px #c7b100);
+}
+
+.option_container .option_frame .save_btn li {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.option_container .option_frame .save_btn li a {
+  color: #3057d8;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 25px;
+  /* padding-top: 50px; */
+  line-height: 220%;
+}
+
+.option_container .option_frame .re_btn {
+  position: absolute;
+  list-style: none;
+  width: 130px;
+  height: 45px;
+  top: 82%;
+  left: 53%;
+  background-color: #ffe30b;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 1px #c7b100);
+}
+
+.option_container .option_frame .re_btn li {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 0.25em;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.option_container .option_frame .re_btn li a {
+  color: #3057d8;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 25px;
+  /* padding-top: 50px; */
+  line-height: 220%;
+}
+
+.option_container .option_frame .re_btn li:hover {
+  background-color: #6ed36e;
+}
+
+.option_container .option_frame .save_btn li:hover {
+  background-color: #6ed36e;
+}
+
+
+.team_name {
   padding-top: 0%;
   background-color: #3057d8;
   text-align: center;

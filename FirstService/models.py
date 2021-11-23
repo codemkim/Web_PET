@@ -40,7 +40,7 @@ def image_to_bytes(img):
 
 class Result(models.Model):
     title = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='imagesResult/', null=True)
+    image = models.FileField(upload_to='imagesResult/', null=True, blank=True)
 
     def __str__(self):
         return self.title

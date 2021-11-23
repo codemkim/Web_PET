@@ -2,21 +2,25 @@
 
 {% block content %}
 
-        <button style="text-align: center;" class="bubbly-button"
-        onclick = "setTimeout(function() {
-            location.href = '{% url 'FirstService:upload' %}'}, 400)">
-        Start !
-        </button>
+    <section class="pekecontainer">
 
-{#        <section class="pekecontainer">#}
-{##}
-{#      <div class="peke_bg">#}
-{#        <img src="{{ 'static/image/nintendo.png' }}">#}
-{#        <!-- <img src="screen_banner.png"> -->#}
-{##}
-{#        <div class="click_box">#}
-{#        </div>#}
-{#      </div>#}
+      <div class="peke_frame">
+        <div class="stat_img">
+          <img src="/static/image/main_stat.png">
+        </div>
+        <div class="banner_img">
+          <img src="/static/image/pecat.png">
+        </div>
+        <div class="text_container">
+          <div class="text_box1">
+            <div class="text_p">반려동물과 <br><br>이모티콘 만들러 가기!</div>
+          </div>
+          <div class="text_box2">
+            <div class="go"><a href="{% url 'FirstService:select' %}">간다 !</a></div>
+            <div class="yes">YES !</div>
+          </div>
+        </div>
+      </div>
 
       <!-- <div class="team_container">
 

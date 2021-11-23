@@ -2,15 +2,13 @@
 
 {% block content %}
 
-           <section class="result_container">
+        <section class="result_container">
         <div class="result_frame">
             <div class="text_box">
                 <div class="step_2"># STEP 2</div>
                 <div class="text">RESULT PEKEMON</div>
             </div>
-            <div class="line_dot">
-                <img style="margin-top: 2rem;" width="200" height="200" border="1" src="{{ result.image.url }}">
-            </div>
+            <div class="line_dot"></div>
             <div class="icon_box_1">
                 <li><a href="#"><i class="fab fa-brands fa-twitter"></i></a></li>
             </div>
@@ -25,10 +23,12 @@
                 <li><a href="{{ result.image.url }}" download="#">저장하기</a></li>
             </div>
             <div class="re_btn">
-                <li><a href="{% url 'FirstService:upload' %}">다시하기</a></li>
+                <li><a href="{% url 'FirstService:home' %}">다시하기</a></li>
             </div>
 
         </div>
+
+
     </section>
     
 {% endblock content %}

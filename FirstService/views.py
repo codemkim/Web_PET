@@ -5,6 +5,14 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 # Create your views here.
 from FirstService.models import Profile,Result
 from PIL import Image
+import requests
+
+
+
+
+# ssh -i flask_model.pem ubuntu@13.59.5.227
+
+# python test.py
 
 
 
@@ -15,6 +23,10 @@ def home(request):
 def upload(request):
 
     return render(request, 'upload.html')
+
+def select(request):
+
+    return render(request, 'select.html')
 
 def upload_create(request):
 
@@ -32,18 +44,28 @@ def learning(request, **kwargs):
 
     # 이미지 흑백 처리 간단 코드
 
-    output = BytesIO()
+    # output = BytesIO()
+    #
+    # temp_image = Image.open(profile.image_converted)
+    # temp_image = temp_image.convert('L')
+    #
+    # temp_image.save(output, format='JPEG')
+    # result_img.image = InMemoryUploadedFile(output,
+    #                                         "ImageField",
+    #                                         profile.image_converted.name,
+    #                                         'image/jpeg',
+    #                                         None,
+    #                                         None)
+    temp = profile.image_converted.name
 
-    temp_image = Image.open(profile.image_converted)
-    temp_image = temp_image.convert('L')
+    resp = requests.post("http://localhost:5000/predict",
+                         files={"file": open('media/'+temp, 'rb')})
+    save_path = "media/temp/result"+str(profile.id)+".jpg"
+    photo = open(save_path, 'wb')
+    photo.write(resp.content)
+    photo.close()
 
-    temp_image.save(output, format='JPEG')
-    result_img.image = InMemoryUploadedFile(output,
-                                            "ImageField",
-                                            profile.image_converted.name,
-                                            'image/jpeg',
-                                            None,
-                                            None)
+    result_img.image = Image.open(save_path)
     result_img.save()
 
     return redirect('FirstService:result', pk=result_img.id)
