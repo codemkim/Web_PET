@@ -8,15 +8,21 @@
                 <div class="step_2"># STEP 2</div>
                 <div class="text">RESULT PEKEMON</div>
             </div>
-            <div class="line_dot"></div>
-            <div class="icon_box_1">
-                <li><a href="#"><i class="fab fa-brands fa-twitter"></i></a></li>
+            <div class="line_dot">
+                <img style="margin:0.7rem 0.65rem; height: 90%; width:90%;" src="{{ result.image.url }}">
             </div>
-            <div class="icon_box_2">
-                <li><a href="#"><i class="fab fa-brands fa-facebook-f"></i></a></li>
-            </div>
-            <div class="icon_box_3">
-                <li><a href="#"><i class="fab fa-brands fa-line"></i></a></li>
+{#            <div class="icon_box_1">#}
+{#                <li><a href="#"><i class="fab fa-brands fa-twitter"></i></a></li>#}
+{#            </div>#}
+{#            <div class="icon_box_2">#}
+{#                <li><a href="#"><i class="fab fa-brands fa-facebook-f"></i></a></li>#}
+{#            </div>#}
+{#            <div class="icon_box_3">#}
+{#                <li><a href="#"><i class="fab fa-brands fa-line"></i></a></li>#}
+{#            </div>#}
+            <div>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+                <div style="text-align: center;" id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
             </div>
 
             <div class="save_btn">
@@ -25,6 +31,8 @@
             <div class="re_btn">
                 <li><a href="{% url 'FirstService:home' %}">다시하기</a></li>
             </div>
+
+
 
         </div>
 

@@ -42,20 +42,8 @@ def learning(request, **kwargs):
     result_img = Result()
     profile = Profile.objects.get(id=kwargs['pk'])
 
-    # 이미지 흑백 처리 간단 코드
+    # 이미지 변환 코드
 
-    # output = BytesIO()
-    #
-    # temp_image = Image.open(profile.image_converted)
-    # temp_image = temp_image.convert('L')
-    #
-    # temp_image.save(output, format='JPEG')
-    # result_img.image = InMemoryUploadedFile(output,
-    #                                         "ImageField",
-    #                                         profile.image_converted.name,
-    #                                         'image/jpeg',
-    #                                         None,
-    #                                         None)
     temp = profile.image_converted.name
 
     resp = requests.post("http://localhost:5000/predict",
@@ -65,7 +53,17 @@ def learning(request, **kwargs):
     photo.write(resp.content)
     photo.close()
 
-    result_img.image = Image.open(save_path)
+    image = Image.open(save_path)
+    image = image.convert('RGB')
+    image = image.resize((300, 300), Image.ANTIALIAS)
+    output = BytesIO()
+    image.save(output, format='JPEG', quality=85)
+    output.seek(0)
+    result_img.image = InMemoryUploadedFile(output, 'ImageField',
+                                str(profile.id)+".jpg",
+                                'image/jpeg',
+                                sys.getsizeof(output), None)
+
     result_img.save()
 
     return redirect('FirstService:result', pk=result_img.id)

@@ -527,7 +527,8 @@ a {
   height: 47%;
   border: solid 6px #ffe30b;
   border-style: dashed;
-  margin: 34% auto;
+  margin-top: 34%;
+    margin-left: 15%;
 }
 
 /* 겹쳐지는 요소(자식요소)는 absolute를 지정하여 top left만으로 위치를 지정해줍니다. */
@@ -939,4 +940,9 @@ a {
   .navbar__icons.active {
     display: flex;
   }
+}
+
+#label-container {
+    margin-top: 2rem;
+    text-align: center;
 }
