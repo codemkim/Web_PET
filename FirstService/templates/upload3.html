@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <section class="upload_container">
+        <div class="upload_frame">
+            <div class="text_box">
+                <div class="step_2"># STEP 1</div>
+                <div class="text">SELECT IMAGE</div>
+            </div>
+            <div class="line_dot">
+                <img id="uploaded_img">
+            </div>
+            <form action="{%url 'FirstService:upload_create3'%}" method="post" enctype="multipart/form-data" class="filebox">
+                {% csrf_token %}
+                <label for="ex_file">Select from the library</label>
+                <input type="file" name="image" id="ex_file">
+                <input type="submit" value="Submit" class="submit_btn" id="submit_btn">
+            </form>
+
+        </div>
+
+    </section>
+
+{% endblock content %}
+

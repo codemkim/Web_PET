@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from io import BytesIO
-import sys
+import sys, os
 from django.core.files.uploadedfile import InMemoryUploadedFile
 # Create your views here.
 from FirstService.models import Profile,Result
 from PIL import Image
 import requests
+from django.conf import settings
 
 
 
@@ -24,6 +25,14 @@ def upload(request):
 
     return render(request, 'upload.html')
 
+def upload2(request):
+
+    return render(request, 'upload2.html')
+
+def upload3(request):
+
+    return render(request, 'upload3.html')
+
 def select(request):
 
     return render(request, 'select.html')
@@ -32,9 +41,60 @@ def upload_create(request):
 
     form = Profile()
     form.image= request.FILES['image']
-
     form.save()
+
     profile = Profile.objects.get(id=form.id)
+
+    temp = profile.image_converted.name
+
+    resp = requests.post("http://3.16.37.62:5000/predict1",
+                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
+
+    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+    photo = open(save_path, 'wb')
+    photo.write(resp.content)
+    photo.close()
+
+
+    return render(request, 'loading.html', {'profile':profile})
+
+def upload_create2(request):
+
+    form = Profile()
+    form.image= request.FILES['image']
+    form.save()
+
+    profile = Profile.objects.get(id=form.id)
+
+    temp = profile.image_converted.name
+
+    resp = requests.post("http://3.16.37.62:5000/predict2",
+                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
+
+    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+    photo = open(save_path, 'wb')
+    photo.write(resp.content)
+    photo.close()
+
+    return render(request, 'loading.html', {'profile':profile})
+
+def upload_create3(request):
+
+    form = Profile()
+    form.image= request.FILES['image']
+    form.save()
+
+    profile = Profile.objects.get(id=form.id)
+
+    temp = profile.image_converted.name
+
+    resp = requests.post("http://3.16.37.62:5000/predict3",
+                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
+
+    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+    photo = open(save_path, 'wb')
+    photo.write(resp.content)
+    photo.close()
 
     return render(request, 'loading.html', {'profile':profile})
 
@@ -44,14 +104,7 @@ def learning(request, **kwargs):
 
     # 이미지 변환 코드
 
-    temp = profile.image_converted.name
-
-    resp = requests.post("http://3.16.37.62:5000/predict",
-                         files={"file": open('media/'+temp, 'rb')})
-    save_path = "media/temp/result"+str(profile.id)+".jpg"
-    photo = open(save_path, 'wb')
-    photo.write(resp.content)
-    photo.close()
+    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id)+".jpg")
 
     image = Image.open(save_path)
     image = image.convert('RGB')

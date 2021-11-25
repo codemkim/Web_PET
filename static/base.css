@@ -112,11 +112,10 @@ a {
 }
 
 .pekecontainer .peke_frame .banner_img img {
-  width: 280px;
+  width: 100%;
   height: auto;
   margin-left: 100%;
   margin-top: 5%;
-  height: 100%;
 }
 
 .pekecontainer .peke_frame .text_container {
@@ -127,7 +126,7 @@ a {
 
 .pekecontainer .peke_frame .text_container .text_box1 {
   position: absolute;
-  width: 600px;
+  width: 90%;
   height: 150px;
   top: 60%;
   background-color: var(--background-color);
@@ -147,10 +146,10 @@ a {
 
 .pekecontainer .peke_frame .text_container .text_box2 {
   position: absolute;
-  width: 220px;
-  height: 120px;
+  width: 30%;
+  height: 30%;
   top: 63.5%;
-  left: 55%;
+  left: 60%;
   background-color: #3057d8;
   border: solid 5px var(--accent-color);
   border-style: dashed;
@@ -665,8 +664,8 @@ a {
 .option_container .option_frame {
   position: relative;
 
-  max-width: 600px;
-  min-width: 600px;
+  max-width: 480px;
+  min-width: 480px;
   width: 100%;
   min-height: 590px;
   max-height: 630px;
@@ -700,7 +699,7 @@ a {
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  padding-top: 69%;
+  padding-top: 85%;
 }
 
 .option_container .option_frame .text_box .text {
@@ -711,30 +710,33 @@ a {
 }
 
 .option_container .option_frame .line_dot {
-  /* position: relative; */
   width: 70%;
   height: 60%;
   border: solid 6px #ffe30b;
   border-style: dashed;
-  margin: 20% auto;
+  margin: 24% auto;
 }
 
-/* 겹쳐지는 요소(자식요소)는 absolute를 지정하여 top left만으로 위치를 지정해줍니다. */
 .option_container .option_frame .icon_box_1 {
   position: absolute;
   list-style: none;
   width: 120px;
   height: 120px;
   top: 25%;
-  left: 23%;
+  left: 20%;
   background-color: #002fa5;
   border-radius: 60px;
 }
 
+/* .option_container .option_frame .icon_box_1 li > .icon_ctrl_1 {
+  width: 5px;
+} */
+
 .option_container .option_frame .icon_box_1 li img {
+  position: absolute;
   margin-left: 15px;
-  padding: 12px 16px;
-  width: 80px;
+  margin-top: -38px;
+  width: 100px;
   filter: drop-shadow(5px 1px 0px #7183ff);
   transition: all 0.2s ease-in-out;
 }
@@ -757,9 +759,9 @@ a {
 }
 
 .option_container .option_frame .icon_box_2 li img {
-  padding: 10px 20px;
-  margin-left: 19px;
-  width: 80px;
+  margin-left: 9px;
+  margin-top: -17px;
+  width: 110px;
   filter: drop-shadow(5px 1px 0px #7183ff);
   transition: all 0.2s ease-in-out;
 }
@@ -782,9 +784,9 @@ a {
 }
 
 .option_container .option_frame .icon_box_3 li img {
-  padding: 24px 14px;
-  margin-left: 13px;
-  width: 85px;
+  margin-left: 9px;
+  margin-top: -17px;
+  width: 110px;
   filter: drop-shadow(5px 1px 0px #7183ff);
   transition: all 0.2s ease-in-out;
 }
@@ -812,9 +814,9 @@ a {
 }
 
 .option_container .option_frame .icon_box_4 li img {
-  padding: 15px 14px;
-  margin-left: 18px;
-  width: 85px;
+  margin-left: 9px;
+  margin-top: -17px;
+  width: 110px;
   filter: drop-shadow(5px 1px 0px #7183ff);
   transition: all 0.2s ease-in-out;
 }
@@ -846,7 +848,6 @@ a {
   font-size: 20px;
   font-weight: bold;
   padding-left: 25px;
-  /* padding-top: 50px; */
   line-height: 220%;
 }
 
@@ -877,7 +878,6 @@ a {
   font-size: 20px;
   font-weight: bold;
   padding-left: 25px;
-  /* padding-top: 50px; */
   line-height: 220%;
 }
 
