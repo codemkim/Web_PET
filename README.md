@@ -1,4 +1,4 @@
-# Web_PETKEMON 
+# Web_PEKEMON 
 
 - BACK-END 구현 및 머신러닝 모델 적용 담당
 
