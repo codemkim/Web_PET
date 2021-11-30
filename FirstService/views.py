@@ -46,17 +46,19 @@ def upload_create(request):
     profile = Profile.objects.get(id=form.id)
 
     temp = profile.image_converted.name
+    try:
+        resp = requests.post("http://3.16.37.62:5000/predict1",
+                             files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
 
-    resp = requests.post("http://3.16.37.62:5000/predict1",
-                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
-
-    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
-    photo = open(save_path, 'wb')
-    photo.write(resp.content)
-    photo.close()
+        save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+        photo = open(save_path, 'wb')
+        photo.write(resp.content)
+        photo.close()
 
 
-    return render(request, 'loading.html', {'profile':profile})
+        return render(request, 'loading.html', {'profile':profile})
+    except:
+        return redirect('FirstService:home')
 
 def upload_create2(request):
 
@@ -68,15 +70,19 @@ def upload_create2(request):
 
     temp = profile.image_converted.name
 
-    resp = requests.post("http://3.16.37.62:5000/predict2",
-                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
+    try:
+        resp = requests.post("http://3.16.37.62:5000/predict1",
+                             files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
 
-    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
-    photo = open(save_path, 'wb')
-    photo.write(resp.content)
-    photo.close()
+        save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+        photo = open(save_path, 'wb')
+        photo.write(resp.content)
+        photo.close()
 
-    return render(request, 'loading.html', {'profile':profile})
+
+        return render(request, 'loading.html', {'profile':profile})
+    except:
+        return redirect('FirstService:home')
 
 def upload_create3(request):
 
@@ -88,15 +94,19 @@ def upload_create3(request):
 
     temp = profile.image_converted.name
 
-    resp = requests.post("http://3.16.37.62:5000/predict3",
-                         files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
+    try:
+        resp = requests.post("http://3.16.37.62:5000/predict1",
+                             files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
 
-    save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
-    photo = open(save_path, 'wb')
-    photo.write(resp.content)
-    photo.close()
+        save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
+        photo = open(save_path, 'wb')
+        photo.write(resp.content)
+        photo.close()
 
-    return render(request, 'loading.html', {'profile':profile})
+
+        return render(request, 'loading.html', {'profile':profile})
+    except:
+        return redirect('FirstService:home')
 
 def learning(request, **kwargs):
     result_img = Result()
