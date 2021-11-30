@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo "result_LAST_2"
+RUN echo "result_LAST_3"
 
 RUN git clone https://github.com/codemkim/Web_PET.git
 
