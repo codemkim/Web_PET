@@ -59,7 +59,7 @@ def upload_create(request):
 
         return render(request, 'loading.html', {'profile':profile})
     except:
-        return redirect('FirstService:error')
+        return redirect('FirstService:home')
 
 def upload_create2(request):
 
