@@ -1,10 +1,11 @@
-# Web_PETKEMON 
+# Web_PEKEMON 
 
 - BACK-END 구현 및 머신러닝 모델 적용 담당
 
 
 
 # Description(설명)
+- Deploy : AWS 웹 배포 yml, nginx, dockerfile 
 
 - FirstService : home, upload, loading, result 화면 연동 및 구현 ( 첫번째 서비스 App )
 
@@ -19,14 +20,12 @@
 
 # Web Deploy(배포)
 
-- 현재 배포 사이트 주소 : http://18.218.207.239/
+- 현재 배포 사이트 주소 :  www.pekemon.shop
 
 - AWS을 통한 웹 배포 및 mariaDB 연동 완료 
 
-- 모델 최적화 진행중.
+- 도메인 적용 완료 
 
-- 도메인 적용 완료 : www.pekemon.shop
+- https 웹 보안 프로토콜 적용 진행중 
 
-- 웹 https 프로토콜 적용 ( 에러 잡기 ) + 공부
-
-- GAN 모델 적용 후 배포 완료( 11/23 ) 화풍별 모델 적용 ( 11/25)
+- GAN 모델 화풍별 선택 적용 후 배포 완료
