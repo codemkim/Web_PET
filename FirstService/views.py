@@ -33,6 +33,7 @@ def upload3(request):
 
     return render(request, 'upload3.html')
 
+
 def select(request):
 
     return render(request, 'select.html')
@@ -58,7 +59,7 @@ def upload_create(request):
 
         return render(request, 'loading.html', {'profile':profile})
     except:
-        return redirect('FirstService:home')
+        return redirect('FirstService:error')
 
 def upload_create2(request):
 
@@ -71,7 +72,7 @@ def upload_create2(request):
     temp = profile.image_converted.name
 
     try:
-        resp = requests.post("http://3.16.37.62:5000/predict1",
+        resp = requests.post("http://3.16.37.62:5000/predict2",
                              files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
 
         save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
@@ -95,7 +96,7 @@ def upload_create3(request):
     temp = profile.image_converted.name
 
     try:
-        resp = requests.post("http://3.16.37.62:5000/predict1",
+        resp = requests.post("http://3.16.37.62:5000/predict3",
                              files={"file": open(os.path.join(settings.BASE_DIR, 'media', temp), 'rb')})
 
         save_path = os.path.join(settings.BASE_DIR, "media", "temp", "result" + str(profile.id) + ".jpg")
