@@ -1,6 +1,6 @@
 # Web_PEKEMON 
 
-- BACK-END 구현 및 머신러닝 모델 적용 담당
+- BACK-END 구현 및 머신러닝(gan) 모델 적용 담당
 
 
 
