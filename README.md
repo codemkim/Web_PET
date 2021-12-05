@@ -30,7 +30,7 @@
 
 - GAN 모델 화풍별 선택 적용 후 배포 완료
 
-# AWARD
+# AWARD(수상)
 
 ![image](https://user-images.githubusercontent.com/80312713/144539643-33b0de7a-f74c-47f8-89d4-e3fb37b807a5.png)
 
